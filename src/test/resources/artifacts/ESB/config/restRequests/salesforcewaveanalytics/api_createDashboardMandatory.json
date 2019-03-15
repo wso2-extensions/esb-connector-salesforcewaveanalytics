@@ -1,0 +1,9 @@
+{
+  "state": %s(state),
+  "folder":{
+    "id": "%s(folderId)",
+    "name": "%s(folderName)"
+  },
+   "label": "%s(label)"
+
+}

@@ -1,0 +1,13 @@
+{
+  "state": %s(state),
+  "folder":{
+    "id": "%s(folderId)",
+    "name": "%s(folderName)"
+  },
+  "label": "%s(label)",
+  "description": "%s(description)",
+  "mobileDisabled": "%s(mobileDisabled)",
+  "name": "%s(name)",
+  "dashboardId": "%s(dashboardId)"
+}
+

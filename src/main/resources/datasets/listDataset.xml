@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+
+   WSO2 Inc. licenses this file to you under the Apache License,
+   Version 2.0 (the "License"); you may not use this file except
+   in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied. See the License for the
+   specific language governing permissions and limitations
+   under the License.
+-->
+<template name="listDataset" xmlns="http://ws.apache.org/ns/synapse">
+    <!-- Optional parameters -->
+    <parameter name="folderId" description="The specific folder ID to be filtered"/>
+    <parameter name="hasCurrentOnly" description="current version true or false "/>
+    <parameter name="order" description="Order of the values [Ascending or descending]"/>
+    <parameter name="page" description=" A generated token that indicates the view of datasets to be returned"/>
+    <parameter name="pageSize"
+               description="Number of items to be returned in a single page. Minimum is 1, maximum is 200, and default is 25"/>
+    <parameter name="q" description="Search terms"/>
+    <parameter name="sort" description="Property names that can be sorted"/>
+    <sequence>
+        <property name="uri.var.apiParameters" value=""/>
+        <property name="uri.var.folderId" expression="$func:folderId"/>
+        <property name="uri.var.hasCurrentOnly" expression="$func:hasCurrentOnly"/>
+        <property name="uri.var.order" expression="$func:order"/>
+        <property name="uri.var.page" expression="$func:page"/>
+        <property name="uri.var.pageSize" expression="$func:pageSize"/>
+        <property name="uri.var.q" expression="$func:q"/>
+        <property name="uri.var.sort" expression="$func:sort"/>
+        <property name="Accept-Encoding" scope="transport" action="remove"/>
+        <filter xpath="(not(get-property('uri.var.folderId') = '' or (not(string(get-property('uri.var.folderId'))))))">
+            <then>
+                <property name="uri.var.apiParameters"
+                          expression="fn:concat(get-property('uri.var.apiParameters'),'&amp;folderId=',get-property('uri.var.folderId'))"/>
+            </then>
+        </filter>
+        <filter
+                xpath="(not(get-property('uri.var.hasCurrentOnly') = '' or (not(string(get-property('uri.var.hasCurrentOnly'))))))">
+            <then>
+                <property name="uri.var.apiParameters"
+                          expression="fn:concat(get-property('uri.var.apiParameters'),'&amp;hasCurrentOnly=',get-property('uri.var.hasCurrentOnly'))"/>
+            </then>
+        </filter>
+        <filter xpath="(not(get-property('uri.var.order') = '' or (not(string(get-property('uri.var.order'))))))">
+            <then>
+                <property name="uri.var.apiParameters"
+                          expression="fn:concat(get-property('uri.var.apiParameters'),'&amp;order=',get-property('uri.var.order'))"/>
+            </then>
+        </filter>
+        <filter xpath="(not(get-property('uri.var.page') = '' or (not(string(get-property('uri.var.page'))))))">
+            <then>
+                <property name="uri.var.apiParameters"
+                          expression="fn:concat(get-property('uri.var.apiParameters'),'&amp;page=',get-property('uri.var.page'))"/>
+            </then>
+        </filter>
+        <filter xpath="(not(get-property('uri.var.pageSize') = '' or (not(string(get-property('uri.var.pageSize'))))))">
+            <then>
+                <property name="uri.var.apiParameters"
+                          expression="fn:concat(get-property('uri.var.apiParameters'),'&amp;pageSize=',get-property('uri.var.pageSize'))"/>
+            </then>
+        </filter>
+        <filter xpath="(not(get-property('uri.var.q') = '' or (not(string(get-property('uri.var.q'))))))">
+            <then>
+                <property name="uri.var.apiParameters"
+                          expression="fn:concat(get-property('uri.var.apiParameters'),'&amp;q=',get-property('uri.var.q'))"/>
+            </then>
+        </filter>
+        <filter xpath="(not(get-property('uri.var.sort') = '' or (not(string(get-property('uri.var.sort'))))))">
+            <then>
+                <property name="uri.var.apiParameters"
+                          expression="fn:concat(get-property('uri.var.apiParameters'),'&amp;sort=',get-property('uri.var.sort'))"/>
+            </then>
+        </filter>
+        <call>
+            <endpoint>
+                <http method="Get"
+                      uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/datasets?{+uri.var.apiParameters}">
+                    <timeout>
+                        <duration>{$ctx:timeout}</duration>
+                        <responseAction>fault</responseAction>
+                    </timeout>
+                    <suspendOnFailure>
+                        <errorCodes>-1</errorCodes>
+                        <progressionFactor>1.0</progressionFactor>
+                    </suspendOnFailure>
+                    <markForSuspension>
+                        <errorCodes>-1</errorCodes>
+                    </markForSuspension>
+                </http>
+            </endpoint>
+        </call>
+    </sequence>
+</template>

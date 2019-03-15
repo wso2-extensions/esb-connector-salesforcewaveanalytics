@@ -1,0 +1,10 @@
+{
+
+  "folderId":  "%s(folderId)",
+  "mobileOnly": "%s(mobileOnly)",
+  "scope":  "%s(scope)",
+  "page":"%s(page)",
+  "pageSize":  "%s(pageSize)",
+  "q": "%s(q)",
+  "sort":  "nn"
+}

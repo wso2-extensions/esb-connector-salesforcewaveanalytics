@@ -1,0 +1,16 @@
+{
+  "name": "%s(name)",
+  "attachedFiles": [{
+    "id": "%s(attachedFilesId)",
+    "name": "%s(attachedFilesName)"
+  }],
+  "assetIcon": "%s(assetIconNeg)",
+  "defaultAsset":{
+    "id":"%s(defaultAssetId)",
+    "name":"%s(defaultAssetName)"
+  },
+  "canBeSharedExternally": "%s(canBeSharedExternally)",
+  "description": "%s(description)",
+  "applicationStatus": "%s(applicationStatus)",
+  "label": "%s(label)"
+}
