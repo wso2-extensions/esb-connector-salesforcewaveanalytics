@@ -19,9 +19,7 @@
 <component name="lense" type="synapse/template">
     <subComponents>
         <component name="listLense">
-            <file>listLense.xml</file>
-            <description>Returns the list of lenses.
-            </description>
+            <file>listLense.xml</file><description>Returns the list of lenses.</description>
         </component>
     </subComponents>
 </component>

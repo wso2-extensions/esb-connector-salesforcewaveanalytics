@@ -19,19 +19,13 @@
 <component name="folder" type="synapse/template">
     <subComponents>
         <component name="listFolder">
-            <file>listFolder.xml</file>
-            <description>Returns the collection of the folder.
-            </description>
+            <file>listFolder.xml</file><description>Returns the collection of the folder.</description>
         </component>
         <component name="listFolderById">
-            <file>listFolderById.xml</file>
-            <description>Lists the folder by specific Id.
-            </description>
+            <file>listFolderById.xml</file><description>Lists the folder by specific Id.</description>
         </component>
         <component name="replaceFolder">
-            <file>replaceFolder.xml</file>
-            <description>Replaces the folder.
-            </description>
+            <file>replaceFolder.xml</file><description>Replaces the folder.</description>
         </component>
     </subComponents>
 </component>

@@ -19,19 +19,13 @@
 <component name="dashboard" type="synapse/template">
     <subComponents>
         <component name="listDashboard">
-            <file>listDashboard.xml</file>
-            <description>Returns the collection of the dashboard.
-            </description>
+            <file>listDashboard.xml</file><description>Returns the collection of the dashboard.</description>
         </component>
         <component name="updateDashboard">
-            <file>updateDashboard.xml</file>
-            <description>Updates the dashboard.
-            </description>
+            <file>updateDashboard.xml</file><description>Updates the dashboard.</description>
         </component>
         <component name="createDashboard">
-            <file>createDashboard.xml</file>
-            <description>Creates the dashboard.
-            </description>
+            <file>createDashboard.xml</file><description>Creates the dashboard.</description>
         </component>
     </subComponents>
 </component>

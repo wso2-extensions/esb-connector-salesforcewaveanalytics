@@ -19,12 +19,11 @@
 <component name="config" type="synapse/template">
     <subComponents>
         <component name="init">
-            <file>init.xml</file>
-            <description>Initial configuration file for salesforce wave analytics</description>
+            <file>init.xml</file><description>Initial configuration file for salesforce wave analytics</description>
         </component>
         <component name="getAccessTokenFromRefreshToken">
-            <file>getAccessTokenFromRefreshToken.xml</file>
-            <description>Getting Access Token from refresh token</description>
+            <file>getAccessTokenFromRefreshToken.xml</file><description>Getting Access Token from refresh token
+        </description>
         </component>
     </subComponents>
 </component>

@@ -19,14 +19,10 @@
 <component name="datasets" type="synapse/template">
     <subComponents>
         <component name="listDataset">
-            <file>listDataset.xml</file>
-            <description>Returns the collection of the dataset.
-            </description>
+            <file>listDataset.xml</file><description>Returns the collection of the dataset.</description>
         </component>
         <component name="updateDataset">
-            <file>updateDataset.xml</file>
-            <description>Updates the dataset for a specific Id.
-            </description>
+            <file>updateDataset.xml</file><description>Updates the dataset for a specific Id.</description>
         </component>
     </subComponents>
 </component>

@@ -19,9 +19,7 @@
 <component name="annotation" type="synapse/template">
     <subComponents>
         <component name="listAnnotations">
-            <file>listAnnotations.xml</file>
-            <description>Lists the annotation resources.
-            </description>
+            <file>listAnnotations.xml</file><description>Lists the annotation resources.</description>
         </component>
     </subComponents>
 </component>
