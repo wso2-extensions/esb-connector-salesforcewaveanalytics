@@ -16,7 +16,7 @@ Before you start performing various operations with the connector, make sure to 
 
 Salesforce Wave Analytics API uses the OAuth protocol to allow application users to securely access data without having to reveal their user credentials.  For more information on authentication is done in Salesforce, see [Understanding Authentication](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm).
 
-###Obtaining user credentials
+### Obtaining user credentials
 
 * **Follow the steps below to create a connected application using Salesforce and to obtain the consumer key as well as the consumer secret for the created connected application:**
 

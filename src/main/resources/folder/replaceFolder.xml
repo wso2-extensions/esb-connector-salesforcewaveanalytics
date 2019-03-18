@@ -98,23 +98,47 @@
             mc.setPayloadJSON(payload);
          ]]>
         </script>
-        <call>
-            <endpoint>
-                <http method="put"
-                      uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/folders/{uri.var.folderId}">
-                    <timeout>
-                        <duration>{$ctx:timeout}</duration>
-                        <responseAction>fault</responseAction>
-                    </timeout>
-                    <suspendOnFailure>
-                        <errorCodes>-1</errorCodes>
-                        <progressionFactor>1.0</progressionFactor>
-                    </suspendOnFailure>
-                    <markForSuspension>
-                        <errorCodes>-1</errorCodes>
-                    </markForSuspension>
-                </http>
-            </endpoint>
-        </call>
+        <filter source="$ctx:salesforceBlocking" regex="true">
+            <then>
+                <call blocking="true">
+                    <endpoint>
+                        <http method="put"
+                              uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/folders/{uri.var.folderId}">
+                            <timeout>
+                                <duration>{$ctx:timeout}</duration>
+                                <responseAction>fault</responseAction>
+                            </timeout>
+                            <suspendOnFailure>
+                                <errorCodes>-1</errorCodes>
+                                <progressionFactor>1.0</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <errorCodes>-1</errorCodes>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+            </then>
+            <else>
+                <call>
+                    <endpoint>
+                        <http method="put"
+                              uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/folders/{uri.var.folderId}">
+                            <timeout>
+                                <duration>{$ctx:timeout}</duration>
+                                <responseAction>fault</responseAction>
+                            </timeout>
+                            <suspendOnFailure>
+                                <errorCodes>-1</errorCodes>
+                                <progressionFactor>1.0</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <errorCodes>-1</errorCodes>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+            </else>
+        </filter>
     </sequence>
 </template>

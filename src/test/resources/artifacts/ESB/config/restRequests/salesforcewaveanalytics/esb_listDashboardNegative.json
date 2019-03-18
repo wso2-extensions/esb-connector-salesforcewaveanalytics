@@ -8,4 +8,4 @@
   "apiVersion": "n",
   "intervalTime": "%s(intervalTime)",
   "registryPath": "%s(registryPath)"
-  }
+}

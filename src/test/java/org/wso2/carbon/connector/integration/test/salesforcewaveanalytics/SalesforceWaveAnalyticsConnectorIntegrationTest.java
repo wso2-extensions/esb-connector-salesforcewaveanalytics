@@ -119,15 +119,13 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
     /**
      * Positive test case for listAnnotations method with mandatory parameters.
      */
-
     @Test(groups = {"wso2.esb"}, dependsOnMethods = {"testListDashboardMandatory"},
             description = "salesforcewaveanalytics {listAnnotations} integration test with mandatory parameters.")
     public void testListAnnotationsMandatory() throws Exception {
 
         String methodName = "listAnnotations";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listAnnotationsMandatory.json");
+                "POST", esbRequestHeadersMap, "listAnnotationsMandatory.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/annotations?assetId=" +
                 connectorProperties.getProperty("assetId");
@@ -142,7 +140,6 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
     /**
      * Negative test case for listAnnotations method .
      */
-
     @Test(groups = {"wso2.esb"}, dependsOnMethods = {"testListDashboardMandatory"},
             description = "salesforcewaveanalytics {listAnnotations} integration test.")
     public void testListAnnotationsNegative() throws Exception {
@@ -167,8 +164,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "createDashboard";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "esb_createDashboardMandatory.json");
+                "POST", esbRequestHeadersMap, "esb_createDashboardMandatory.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/dashboards";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST",
@@ -186,8 +182,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "createDashboard";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "esb_createDashboardNegative.json");
+                "POST", esbRequestHeadersMap, "esb_createDashboardNegative.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/dashboards";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST",
@@ -199,15 +194,13 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
     /**
      * Positive test case for createDashboard with optional parameters.
      */
-
     @Test(groups = {"wso2.esb"}, dependsOnMethods = {"testListFolderMendatory"}, description =
             "salesforcewaveanalytics {createDashboard} integration test with optional parameters.")
     public void testCreateDashboardOptional() throws Exception {
 
         String methodName = "createDashboard";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "esb_createDashboardOptional.json");
+                "POST", esbRequestHeadersMap, "esb_createDashboardOptional.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/dashboards?folderId=" +
                 connectorProperties.getProperty("folderId");
@@ -226,10 +219,8 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listDashboard";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listDashboardMandatory.json");
-        String dId = esbRestResponse.getBody().getJSONArray("dashboards").getJSONObject(0).getString
-                ("id");
+                "POST", esbRequestHeadersMap, "listDashboardMandatory.json");
+        String dId = esbRestResponse.getBody().getJSONArray("dashboards").getJSONObject(0).getString("id");
         connectorProperties.setProperty("dashboardId", dId);
         connectorProperties.setProperty("defaultAssetId", dId);
         connectorProperties.setProperty("assetId", dId);
@@ -279,8 +270,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listTemplate";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listTemplateOptional.json");
+                "POST", esbRequestHeadersMap, "listTemplateOptional.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/templates?type="
                 + connectorProperties.getProperty("type");
@@ -301,8 +291,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listTemplate";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listTemplateNegative.json");
+                "POST", esbRequestHeadersMap, "listTemplateNegative.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/templates?type=" +
                 connectorProperties.getProperty("typeNeg");
@@ -321,8 +310,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listDataset";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listDatasetMendatory.json");
+                "POST", esbRequestHeadersMap, "listDatasetMendatory.json");
         String cId = esbRestResponse.getBody().getJSONArray("datasets").getJSONObject(0).getString
                 ("currentVersionId");
         connectorProperties.setProperty("currentVersionId", cId);
@@ -349,8 +337,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listDataset";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "esb_listDatasetNegative.json");
+                "POST", esbRequestHeadersMap, "esb_listDatasetNegative.json");
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 404);
     }
 
@@ -389,10 +376,8 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listFolder";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listFolderMendatory.json");
-        String id = esbRestResponse.getBody().getJSONArray("folders").getJSONObject(0).getString
-                ("id");
+                "POST", esbRequestHeadersMap, "listFolderMendatory.json");
+        String id = esbRestResponse.getBody().getJSONArray("folders").getJSONObject(0).getString("id");
         connectorProperties.setProperty("folderId", id);
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/"
                 + connectorProperties.getProperty("apiVersion") + "/wave/folders";
@@ -414,8 +399,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listFolderById";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listFolderByIdMendotory.json");
+                "POST", esbRequestHeadersMap, "listFolderByIdMendotory.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/folders/"
                 + connectorProperties.getProperty("folderId");
@@ -436,8 +420,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listFolderById";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listFolderByIdOptional.json");
+                "POST", esbRequestHeadersMap, "listFolderByIdOptional.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/folders/"
                 + connectorProperties.getProperty("folderId") + "?=mobileOnlyFeaturedAssets" +
@@ -459,8 +442,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listFolderById";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "esb_listFolderByIdNegative.json");
+                "POST", esbRequestHeadersMap, "esb_listFolderByIdNegative.json");
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 404);
     }
 
@@ -473,8 +455,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listLense";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listLenseMendatory.json");
+                "POST", esbRequestHeadersMap, "listLenseMendatory.json");
         String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/services/data/" +
                 connectorProperties.getProperty("apiVersion") + "/wave/lenses";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET",
@@ -494,8 +475,7 @@ public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIn
 
         String methodName = "listLense";
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(getProxyServiceURLHttp(methodName),
-                "POST", esbRequestHeadersMap,
-                "listLenseNegative.json");
+                "POST", esbRequestHeadersMap, "listLenseNegative.json");
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 404);
     }
 

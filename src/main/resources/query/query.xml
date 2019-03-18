@@ -23,30 +23,54 @@
         <payloadFactory media-type="json">
             <format>
                 {
-                "query": $1,
+                "query": $1
                 }
             </format>
             <args>
                 <arg expression="$func:query" evaluator="xml"/>
             </args>
         </payloadFactory>
-        <call>
-            <endpoint>
-                <http method="post"
-                      uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/query">
-                    <timeout>
-                        <duration>{$ctx:timeout}</duration>
-                        <responseAction>fault</responseAction>
-                    </timeout>
-                    <suspendOnFailure>
-                        <errorCodes>-1</errorCodes>
-                        <progressionFactor>1.0</progressionFactor>
-                    </suspendOnFailure>
-                    <markForSuspension>
-                        <errorCodes>-1</errorCodes>
-                    </markForSuspension>
-                </http>
-            </endpoint>
-        </call>
+        <filter source="$ctx:salesforceBlocking" regex="true">
+            <then>
+                <call blocking="true">
+                    <endpoint>
+                        <http method="post"
+                              uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/query">
+                            <timeout>
+                                <duration>{$ctx:timeout}</duration>
+                                <responseAction>fault</responseAction>
+                            </timeout>
+                            <suspendOnFailure>
+                                <errorCodes>-1</errorCodes>
+                                <progressionFactor>1.0</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <errorCodes>-1</errorCodes>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+            </then>
+            <else>
+                <call>
+                    <endpoint>
+                        <http method="post"
+                              uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/query">
+                            <timeout>
+                                <duration>{$ctx:timeout}</duration>
+                                <responseAction>fault</responseAction>
+                            </timeout>
+                            <suspendOnFailure>
+                                <errorCodes>-1</errorCodes>
+                                <progressionFactor>1.0</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <errorCodes>-1</errorCodes>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+            </else>
+        </filter>
     </sequence>
 </template>

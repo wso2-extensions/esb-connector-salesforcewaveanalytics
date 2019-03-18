@@ -362,87 +362,87 @@ Following example illustrates how to connect to Salesforce wave analytics with t
 
 1. Create a sample proxy as below :
 
-```xml
-<proxy xmlns="http://ws.apache.org/ns/synapse"
-       name="createDashboard"
-       startOnLoad="true"
-       statistics="disable"
-       trace="disable"
-       transports="http,https">
-    <target>
-        <inSequence>
-            <property expression="json-eval($.accessToken)" name="accessToken"/>
-            <property expression="json-eval($.apiVersion)" name="apiVersion"/>
-            <property expression="json-eval($.hostName)" name="hostName"/>
-            <property expression="json-eval($.refreshToken)" name="refreshToken"/>
-            <property expression="json-eval($.clientSecret)" name="clientSecret"/>
-            <property expression="json-eval($.clientId)" name="clientId"/>
-            <property expression="json-eval($.apiUrl)" name="apiUrl"/>
-            <property expression="json-eval($.registryPath)" name="registryPath"/>
-            <property expression="json-eval($.intervalTime)" name="intervalTime"/>
-            <property expression="json-eval($.state)" name="state"/>
-            <property expression="json-eval($.folderId)" name="folderId"/>
-            <property expression="json-eval($.folderName)" name="folderName"/>
-            <property expression="json-eval($.description)" name="description"/>
-            <property expression="json-eval($.label)" name="label"/>
-            <property expression="json-eval($.name)" name="name"/>
-            <salesforcewaveanalytics.init>
-                <accessToken>{$ctx:accessToken}</accessToken>
-                <apiUrl>{$ctx:apiUrl}</apiUrl>
-                <clientId>{$ctx:clientId}</clientId>
-                <clientSecret>{$ctx:clientSecret}</clientSecret>
-                <refreshToken>{$ctx:refreshToken}</refreshToken>
-                <hostName>{$ctx:hostName}</hostName>
-                <apiVersion>{$ctx:apiVersion}</apiVersion>
-                <registryPath>{$ctx:registryPath}</registryPath>
-                <intervalTime>{$ctx:intervalTime}</intervalTime>
-            </salesforcewaveanalytics.init>
-            <salesforcewaveanalytics.createDashboard>
-                <state>{$ctx:state}</state>
-                <folderId>{$ctx:folderId}</folderId>
-                <folderName>{$ctx:folderName}</folderName>
-                <description>{$ctx:description}</description>
-                <label>{$ctx:label}</label>
-                <name>{$ctx:name}</name>
-            </salesforcewaveanalytics.createDashboard>
-            <send/>
-        </inSequence>
-    </target>
-    <description/>
-</proxy>
-```
+    ```xml
+    <proxy xmlns="http://ws.apache.org/ns/synapse"
+           name="createDashboard"
+           startOnLoad="true"
+           statistics="disable"
+           trace="disable"
+           transports="http,https">
+        <target>
+            <inSequence>
+                <property expression="json-eval($.accessToken)" name="accessToken"/>
+                <property expression="json-eval($.apiVersion)" name="apiVersion"/>
+                <property expression="json-eval($.hostName)" name="hostName"/>
+                <property expression="json-eval($.refreshToken)" name="refreshToken"/>
+                <property expression="json-eval($.clientSecret)" name="clientSecret"/>
+                <property expression="json-eval($.clientId)" name="clientId"/>
+                <property expression="json-eval($.apiUrl)" name="apiUrl"/>
+                <property expression="json-eval($.registryPath)" name="registryPath"/>
+                <property expression="json-eval($.intervalTime)" name="intervalTime"/>
+                <property expression="json-eval($.state)" name="state"/>
+                <property expression="json-eval($.folderId)" name="folderId"/>
+                <property expression="json-eval($.folderName)" name="folderName"/>
+                <property expression="json-eval($.description)" name="description"/>
+                <property expression="json-eval($.label)" name="label"/>
+                <property expression="json-eval($.name)" name="name"/>
+                <salesforcewaveanalytics.init>
+                    <accessToken>{$ctx:accessToken}</accessToken>
+                    <apiUrl>{$ctx:apiUrl}</apiUrl>
+                    <clientId>{$ctx:clientId}</clientId>
+                    <clientSecret>{$ctx:clientSecret}</clientSecret>
+                    <refreshToken>{$ctx:refreshToken}</refreshToken>
+                    <hostName>{$ctx:hostName}</hostName>
+                    <apiVersion>{$ctx:apiVersion}</apiVersion>
+                    <registryPath>{$ctx:registryPath}</registryPath>
+                    <intervalTime>{$ctx:intervalTime}</intervalTime>
+                </salesforcewaveanalytics.init>
+                <salesforcewaveanalytics.createDashboard>
+                    <state>{$ctx:state}</state>
+                    <folderId>{$ctx:folderId}</folderId>
+                    <folderName>{$ctx:folderName}</folderName>
+                    <description>{$ctx:description}</description>
+                    <label>{$ctx:label}</label>
+                    <name>{$ctx:name}</name>
+                </salesforcewaveanalytics.createDashboard>
+                <send/>
+            </inSequence>
+        </target>
+        <description/>
+    </proxy>
+    ```
 
 2. Create a json file named createDashboard.json and copy the configurations given below to it:
 
-```json
-{
- "clientId": "3MVG9pe2TCoA1Pf6K584VNDD80a6UqXVrD8cmFybYmBGw_0lzlTDE.O6.jp8U4Dnlw6WKH62Rwp7DAHjnd7sl",
-  "refreshToken": "5Aep861ARUdJp8j3X36_jKdhoQp8ma26ieHKwW8JYjTK2BDPOO9pG5e8PvVODwZ4DSMgJJwfHSu_9TRyaIzt1r2",
-  "clientSecret": "5478649612867397870",
-  "hostName": "https://login.salesforce.com",
-  "apiVersion": "v39.0",
-  "registryPath":"connectors/salesforcewaveanalytics",
-  "accessToken":"00D0o0000016avV!AQYAQHE9LTqCDUZIilIzLWtL4n7I1iJdMo7ci3Ra41QDVpJX86mV85QBCPl8LbqEFHjRmMEPS8BmYkRoKakL.i3KkQoeMHuL",
-  "intervalTime" : "100000",
-  "apiUrl":"https://ap8.salesforce.com",
-   "state":{
-    	"gridLayouts": 
-    		 {
-    		   "name": "Default",
-    		    "version": 1
-        	 },
-    "folderName": "My_DTC_Sales",
-    "folderId": "00l0o000002AC94AAG", 
-    "label":"newDashboardCreated"
-    }
-}                     
-```
-3. Replace the credentials with your values.
+    ```json
+    {
+     "clientId": "3MVG9pe2TCoA1Pf6K584VNDD80a6UqXVrD8cmFybYmBGw_0lzlTDE.O6.jp8U4Dnlw6WKH62Rwp7DAHjnd7sl",
+      "refreshToken": "5Aep861ARUdJp8j3X36_jKdhoQp8ma26ieHKwW8JYjTK2BDPOO9pG5e8PvVODwZ4DSMgJJwfHSu_9TRyaIzt1r2",
+      "clientSecret": "5478649612867397870",
+      "hostName": "https://login.salesforce.com",
+      "apiVersion": "v39.0",
+      "registryPath":"connectors/salesforcewaveanalytics",
+      "accessToken":"00D0o0000016avV!AQYAQHE9LTqCDUZIilIzLWtL4n7I1iJdMo7ci3Ra41QDVpJX86mV85QBCPl8LbqEFHjRmMEPS8BmYkRoKakL.i3KkQoeMHuL",
+      "intervalTime" : "100000",
+      "apiUrl":"https://ap8.salesforce.com",
+       "state":{
+            "gridLayouts": 
+                 {
+                   "name": "Default",
+                    "version": 1
+                 },
+        "folderName": "My_DTC_Sales",
+        "folderId": "00l0o000002AC94AAG", 
+        "label":"newDashboardCreated"
+        }
+    }                     
+    ```
+3. Replace the values according to your setup.
 
 4. Execute the following curl command:
-  ```bash
-  curl -X POST http://nirudikaa-ThinkPad-T530:8280/services/createDashboard --header 'Content-Type: application/json' -d @createDashboard.json
-  ```
+      ```bash
+      curl -X POST http://localhost:8280/services/createDashboard --header 'Content-Type: application/json' -d @createDashboard.json
+      ```
 
 5. Salesforce wave analytics returns a json response similar to the one shown below:
  

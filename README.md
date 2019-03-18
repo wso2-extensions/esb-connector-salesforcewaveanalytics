@@ -7,7 +7,7 @@ The Salesforce Wave Analytics [Connector](https://docs.wso2.com/display/EI640/Wo
 
 | Connector version | Supported Salesforce REST API version | Supported WSO2 ESB/EI version |
 | ----------------- | ------------- | ------------- |
-| [1.0.0](https://github.com/wso2-extensions/esb-connector-salesforcewaveanalytics/tree/org.wso2.carbon.connector.salesfroceWaveAnalytics-1.0.0) | v32.0 to v45.0 | EI 6.4.0 |
+| [1.0.0](https://github.com/wso2-extensions/esb-connector-salesforcewaveanalytics/tree/org.wso2.carbon.esb.connector.salesfroceWaveAnalytics-1.0.0) | v32.0 to v45.0 | EI 6.4.0 |
 
 
 ## Getting started

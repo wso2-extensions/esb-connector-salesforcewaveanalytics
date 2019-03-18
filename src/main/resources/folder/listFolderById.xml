@@ -28,29 +28,55 @@
         <property name="uri.var.mobileOnlyFeaturedAssets" expression="$func:mobileOnlyFeaturedAssets"/>
         <property name="Accept-Encoding" scope="transport" action="remove"/>
         <filter
-                xpath="(not(get-property('uri.var.mobileOnlyFeaturedAssets') = '' or (not(string(get-property('uri.var.mobileOnlyFeaturedAssets'))))))">
+                xpath="(not(get-property('uri.var.mobileOnlyFeaturedAssets') = ''
+                or (not(string(get-property('uri.var.mobileOnlyFeaturedAssets'))))))">
             <then>
                 <property name="uri.var.apiParameters"
-                          expression="fn:concat(get-property('uri.var.apiParameters'),'&amp;mobileOnlyFeaturedAssets=',get-property('uri.var.mobileOnlyFeaturedAssets'))"/>
+                          expression="fn:concat(get-property('uri.var.apiParameters'),'
+                          &amp;mobileOnlyFeaturedAssets=',get-property('uri.var.mobileOnlyFeaturedAssets'))"/>
             </then>
         </filter>
-        <call>
-            <endpoint>
-                <http method="Get"
-                      uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/folders/{uri.var.folderId}?{+uri.var.apiParameters}">
-                    <timeout>
-                        <duration>{$ctx:timeout}</duration>
-                        <responseAction>fault</responseAction>
-                    </timeout>
-                    <suspendOnFailure>
-                        <errorCodes>-1</errorCodes>
-                        <progressionFactor>1.0</progressionFactor>
-                    </suspendOnFailure>
-                    <markForSuspension>
-                        <errorCodes>-1</errorCodes>
-                    </markForSuspension>
-                </http>
-            </endpoint>
-        </call>
+        <filter source="$ctx:salesforceBlocking" regex="true">
+            <then>
+                <call blocking="true">
+                    <endpoint>
+                        <http method="Get"
+                              uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/folders/{uri.var.folderId}?{+uri.var.apiParameters}">
+                            <timeout>
+                                <duration>{$ctx:timeout}</duration>
+                                <responseAction>fault</responseAction>
+                            </timeout>
+                            <suspendOnFailure>
+                                <errorCodes>-1</errorCodes>
+                                <progressionFactor>1.0</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <errorCodes>-1</errorCodes>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+            </then>
+            <else>
+                <call>
+                    <endpoint>
+                        <http method="Get"
+                              uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/folders/{uri.var.folderId}?{+uri.var.apiParameters}">
+                            <timeout>
+                                <duration>{$ctx:timeout}</duration>
+                                <responseAction>fault</responseAction>
+                            </timeout>
+                            <suspendOnFailure>
+                                <errorCodes>-1</errorCodes>
+                                <progressionFactor>1.0</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <errorCodes>-1</errorCodes>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+            </else>
+        </filter>
     </sequence>
 </template>
