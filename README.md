@@ -21,7 +21,7 @@ The Salesforce Wave Analytics [Connector](https://docs.wso2.com/display/EI640/Wo
 
 #### Configuring the connector operations
 
-To get started with Salesforce Wave Analytics connector and their operations, see [Configuring salesforce wave analytics Operations](docs/config.md).
+To get started with Salesforce Wave Analytics connector and their operations, see [Configuring Salesforce Wave Analytics Operations](docs/config.md).
 
 
 ## Building From the Source

@@ -49,7 +49,7 @@
  3. Before you start performing various operations with the connector, make sure to place the Salesforce certificate to the location
    "{SALESFORCEWAVEANALYTICS_CONNECTOR_HOME}/repository/".Follow the steps to import the certificate:
    
-            i.  Export the Salseforce certificate "DigiCertSHA2SecureServerCA.crt" form the salesforce home page and place the certificate file in following location. 
+            i.  Export the Salseforce certificate "DigiCertSHA2SecureServerCA.crt" form the Salesforcehome page and place the certificate file in following location. 
                "{SALESFORCEWAVEANALYTIS_CONNECTOR_HOME}/src/repository"
                
             ii. Open a command line terminal and execute the following command to import the certificate to  client-truststore.jks and wso2carbon.jks:
@@ -59,7 +59,7 @@
 
  5. Following are the properties used in the 'esb-connector-salesforcewaveanalytics.properties' file and salesforcewaveanalytics properties file at location "<SALESFORCEWAVEANALYTICS_CONNECTOR_HOME>/src/test/resources/artifacts/ESB/connector/config" to run the integration tests.
     
-                apiUrl 		                 -   The URL of the salesforce connected app.
+                apiUrl 		                 -   The URL of the Salesforceconnected app.
                 apiVersion                           -   The api version for the connected app(New version is better because some of the features are supported only on the new version).
                 refreshToken                         -   The refresh token to access the API.
                 clientId                             -   The Consumer key of API to access the connected app.

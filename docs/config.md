@@ -8,7 +8,7 @@
 
 Before you start performing various operations with the connector, make sure to place the Salesforce certificate to the location.Follow the steps to import the certificate:
    
-        i.  Export the Salseforce certificate "DigiCertSHA2SecureServerCA.crt" form the salesforce home page.
+        i.  Export the Salseforce certificate "DigiCertSHA2SecureServerCA.crt" form the Salesforcehome page.
            
         ii. Open a command line terminal and execute the following command to import the certificate to  client-truststore.jks and wso2carbon.jks:
                "keytool -importcert -file DigiCertSHA2SecureServerCA.crt -keystore {SALESFORCEWAVEANALYTICS_CONNECTOR_HOME}/src/test/resources/keystores/products/client-truststore.jks -alias salesforce" and "keytool -importcert -file DigiCertSHA2SecureServerCA.crt -keystore {SALESFORCEWAVEANALYTICS_CONNECTOR_HOME}/src/test/resources/keystores/products/wso2carbon.jks -alias salesforce"

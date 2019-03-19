@@ -20,7 +20,7 @@
     <subComponents>
         <component name="init">
             <file>init.xml</file>
-            <description>Initial configuration file for salesforce wave analytics</description>
+            <description>Initial configuration file for Salesforce Wave Analytics</description>
         </component>
         <component name="getAccessTokenFromRefreshToken">
             <file>getAccessTokenFromRefreshToken.xml</file>
