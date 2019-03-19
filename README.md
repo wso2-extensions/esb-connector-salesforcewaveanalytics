@@ -26,11 +26,11 @@ To get started with Salesforce Wave Analytics connector and their operations, se
 
 ## Building From the Source
 
-Follow the steps given below to build the Salesforce wave analytics connector from the source code:
+Follow the steps given below to build the Salesforce Wave Analytics connector from the source code:
 
 1. Get a clone or download the source from [Github](https://github.com/wso2-extensions/esb-connector-salesforcewaveanalytics).
 2. Run the following Maven command from the `esb-connector-salesforcewaveanalytics` directory: `mvn clean install`.
-3. The Salesforce wave analytics connector zip file is created in the `esb-connector-salesforcewaveanalytics/target` directory
+3. The Salesforce Wave Analytics connector zip file is created in the `esb-connector-salesforcewaveanalytics/target` directory
 
 ## How You Can Contribute
 

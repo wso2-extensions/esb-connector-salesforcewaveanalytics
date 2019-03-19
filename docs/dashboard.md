@@ -4,7 +4,7 @@
 
 ### Overview 
 
-The following operations allow you to work with createDashboard, listDashboard and updateDashboard, for the current organization. Click an operation name to see details on how to use it.
+The following operations allow you to work with Dashboard, for the current organization. Click an operation name to see details on how to use it.
 For a sample proxy service that illustrates how to work with createDashboard, see [Sample configuration](#sample-configuration).
 
 | Operation        | Description |
@@ -358,7 +358,7 @@ Given below is a sample response for the UpdateDashboard operation.
 
 ### Sample configuration
 
-Following example illustrates how to connect to Salesforce wave analytics with the init operation and createDashboard operation.
+Following example illustrates how to connect to Salesforce Wave Analytics with the init operation and createDashboard operation.
 
 1. Create a sample proxy as below :
 
@@ -444,7 +444,7 @@ Following example illustrates how to connect to Salesforce wave analytics with t
       curl -X POST http://localhost:8280/services/createDashboard --header 'Content-Type: application/json' -d @createDashboard.json
       ```
 
-5. Salesforce wave analytics returns a json response similar to the one shown below:
+5. Salesforce Wave Analytics returns a json response similar to the one shown below:
  
 ```json
 

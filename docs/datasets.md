@@ -4,7 +4,7 @@
 
 ### Overview 
 
-The following operations allow you to work with listDataset, updateDataset, for the current organization. Click an operation name to see details on how to use it.
+The following operations allow you to work with Dataset, for the current organization. Click an operation name to see details on how to use it.
 For a sample proxy service that illustrates how to work with updateDataset, see [Sample configuration](#sample-configuration).
 
 | Operation        | Description |
@@ -243,7 +243,7 @@ Given below is a sample response for the listDataset operation.
 
 ### Sample configuration
 
-Following example illustrates how to connect to Salesforce wave analytics with the init operation and updateDataset operation.
+Following example illustrates how to connect to Salesforce Wave Analytics with the init operation and updateDataset operation.
 
 1. Create a sample proxy as below :
 

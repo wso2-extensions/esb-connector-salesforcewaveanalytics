@@ -1,10 +1,10 @@
-# Working with query
+# Working with Query
 
 [[Overview]](#overview)  [[Operation details]](#operation-details)  [[Sample configuration]](#sample-configuration)
 
 ### Overview 
 
-The following operations allow you to work with query, for the current organization. Click an operation name to see details on how to use it.
+The following operations allow you to work with Query, for the current organization. Click an operation name to see details on how to use it.
 For a sample proxy service that illustrates how to work with query, see [Sample configuration](#sample-configuration).
 
 | Operation        | Description |

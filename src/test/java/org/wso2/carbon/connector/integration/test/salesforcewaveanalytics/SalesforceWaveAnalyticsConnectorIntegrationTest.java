@@ -31,7 +31,7 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * Salesforce Wave analytics integration test
+ * Salesforce Wave Analytics integration test
  */
 public class SalesforceWaveAnalyticsConnectorIntegrationTest extends ConnectorIntegrationTestBase {
 

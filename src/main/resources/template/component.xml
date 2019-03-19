@@ -19,7 +19,8 @@
 <component name="template" type="synapse/template">
     <subComponents>
         <component name="listTemplate">
-            <file>listTemplate.xml</file><description>Returns the collection of the templates.</description>
+            <file>listTemplate.xml</file>
+            <description>Returns the collection of the templates.</description>
         </component>
     </subComponents>
 </component>

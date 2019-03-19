@@ -4,7 +4,7 @@
 
 ### Overview 
 
-The following operations allow you to work with listTemplate, for the current organization. Click an operation name to see details on how to use it.
+The following operations allow you to work with Template, for the current organization. Click an operation name to see details on how to use it.
 For a sample proxy service that illustrates how to work with listTemplate, see [Sample configuration](#sample-configuration).
 
 | Operation        | Description |

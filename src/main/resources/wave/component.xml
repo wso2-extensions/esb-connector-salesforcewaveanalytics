@@ -19,8 +19,8 @@
 <component name="wave" type="synapse/template">
     <subComponents>
         <component name="listTopLevelResources">
-            <file>listTopLevelResources.xml</file><description>Lists the top-level resources available for Analytics.
-            </description>
+            <file>listTopLevelResources.xml</file>
+            <description>Lists the top-level resources available for Analytics.</description>
         </component>
     </subComponents>
 </component>

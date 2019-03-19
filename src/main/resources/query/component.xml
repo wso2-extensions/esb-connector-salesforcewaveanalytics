@@ -19,8 +19,8 @@
 <component name="query" type="synapse/template">
     <subComponents>
         <component name="query">
-            <file>query.xml</file><description>Executes a query written in Salesforce Analytics Query Language.
-            </description>
+            <file>query.xml</file>
+            <description>Executes a query written in Salesforce Analytics Query Language.</description>
         </component>
     </subComponents>
 </component>

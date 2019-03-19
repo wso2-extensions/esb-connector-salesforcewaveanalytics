@@ -4,7 +4,7 @@
 
 ### Overview 
 
-The following operations allow you to work with listFolder, listFolderById and replaceFolder, for the current organization. Click an operation name to see details on how to use it.
+The following operations allow you to work with Folder, for the current organization. Click an operation name to see details on how to use it.
 For a sample proxy service that illustrates how to work with listFolderById, see [Sample configuration](#sample-configuration).
 
 | Operation        | Description |
@@ -477,7 +477,7 @@ Following example illustrates how to connect to Salesforce with the init operati
       curl -X POST http://localhost:8280/services/listFolderById --header 'Content-Type: application/json' -d @listFolderById.json
     ```
 
-5. Salesforce wave analytics returns a json response similar to the one shown below:
+5. Salesforce Wave Analytics returns a json response similar to the one shown below:
  
 ```json
 {

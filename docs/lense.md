@@ -4,7 +4,7 @@
 
 ### Overview 
 
-The following operations allow you to work with listLense, for the current organization. Click an operation name to see details on how to use it.
+The following operations allow you to work with Lense, for the current organization. Click an operation name to see details on how to use it.
 For a sample proxy service that illustrates how to work with listLense, see [Sample configuration](#sample-configuration).
 
 | Operation        | Description |

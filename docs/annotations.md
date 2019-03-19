@@ -4,7 +4,7 @@
 
 ### Overview 
 
-The following operations allow you to work with listAnnotations, for the current organization. Click an operation name to see details on how to use it.
+The following operations allow you to work with Annotations, for the current organization. Click an operation name to see details on how to use it.
 For a sample proxy service that illustrates how to work with listAnnotations, see [Sample configuration](#sample-configuration).
 
 | Operation        | Description |

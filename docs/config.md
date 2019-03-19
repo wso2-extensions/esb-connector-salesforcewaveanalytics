@@ -127,4 +127,4 @@ Now that you have connected to Salesforce, use the information in the following 
 
 [Working with Template](template.md)
 
-[Working with query](query.md)
+[Working with Query](query.md)
