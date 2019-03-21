@@ -8,7 +8,7 @@
 
     - WSO2 EI 6.4.0
 
-#####Steps to follow in setting integration test.
+##### Steps to follow in setting integration test.
 
 
  1. Download EI 6.4.0 from [official website](https://wso2.com/products/enterprise-service-bus/#).
@@ -87,21 +87,22 @@
                 defaultAssetName                     -   Name of the default asset.
                 canBeSharedExternally                -   Whether the application is shared in Communities.
                 applicationStatus                    -   The creation status of application.
+        
                 
-         ######Note
-         To get a attachedFileId follow the steps given below:
-         
-        * Login to your developer account.
-        * Switch to classical view.
-        * Go to User menu for your user name.
-        * Go to My profile and click the "+" sign.
-        * And select the "files".
-        * Under the "MY FILES" choose Owned by me or shared with me or following and select a file.
-        * You can get the attachedFilesId at the URL for example "https://ap8.salesforce.com/0690o000005szja?retUrl=%2F_ui%2Fcore%2Fchatter%2Ffiles%2FFileTabPage".
-        * Extract the attachedFilesId.
-                    
-     
+ ###### Note
+ To get a attachedFileId follow the steps given below:
  
- 6.   Navigate to "{SALESFORCEWAVEANALYTICS_CONNECTOR_HOME}/" and run the following command. <br/>
+* Login to your developer account.
+* Switch to classical view.
+* Go to User menu for your user name.
+* Go to My profile and click the "+" sign.
+* And select the "files".
+* Under the "MY FILES" choose Owned by me or shared with me or following and select a file.
+* You can get the attachedFilesId at the URL for example "https://ap8.salesforce.com/0690o000005szja?retUrl=%2F_ui%2Fcore%2Fchatter%2Ffiles%2FFileTabPage".
+* Extract the attachedFilesId.
+            
+
+ 
+ 6,   Navigate to "{SALESFORCEWAVEANALYTICS_CONNECTOR_HOME}/" and run the following command. <br/>
            
              `$ mvn clean install -Dskip-tests=false`
