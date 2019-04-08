@@ -21,7 +21,7 @@ Salesforce Wave Analytics API uses the OAuth protocol to allow application users
 * **Follow the steps below to create a connected application using Salesforce and to obtain the consumer key as well as the consumer secret for the created connected application:**
 
     1. Go to https://developer.salesforce.com/promotions/orgs/analytics-de, and sign up to get a free developer environment. 
-    2. Go to **Setup** -> **Create** -> **Apps**, and click **New**. This creates a new connected application.
+    2. If you are in lightning experience view switch to classical view and go to **Setup** -> **Create** -> **Apps**, and click **New**. This creates a new connected application.
     3. Specify a name for your application, your email address as well as any other basic information applicable to your application.
     4. Specify an **Info URL**. This is where a user can go for more information about your application.
     5. Select **Enable OAuth Settings**. This displays the **API (Enable OAuth Settings)** section.
@@ -113,18 +113,18 @@ Following is a sample REST request that can be handled by the init operation.
 
 Now that you have connected to Salesforce, use the information in the following topics to perform various operations with the connector.
 
-[Working with Annotations](annotations.md)
+[Working with Annotation operation](annotations.md)
 
-[Working with Wave](wave.md)
+[Working with Wave operation](wave.md)
 
-[Working with Dataset](datasets.md)
+[Working with Dataset operation](datasets.md)
 
-[Working with Dashboard](dashboard.md)
+[Working with Dashboard operation](dashboard.md)
 
-[Working with Folder](folder.md)
+[Working with Folder operation](folder.md)
 
-[Working with Lense](lense.md)
+[Working with Lense operation](lense.md)
 
-[Working with Template](template.md)
+[Working with Template operation](template.md)
 
-[Working with Query](query.md)
+[Working with Query operation](query.md)

@@ -110,8 +110,6 @@
                 </filter>
             </then>
         </filter>
-        <header name="Authorization"
-                expression="fn:concat('Bearer  ', $ctx:uri.var.accessToken )"
-                scope="transport"/>
+        <header name="Authorization" expression="fn:concat('Bearer  ', $ctx:uri.var.accessToken )" scope="transport"/>
     </sequence>
 </template>

@@ -1,4 +1,4 @@
-# Working with Dashboard
+# Working with Dashboard operation
 
 [[Overview]](#overview)  [[Operation details]](#operation-details)  [[Sample configuration]](#sample-configuration)
 

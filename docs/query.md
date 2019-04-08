@@ -1,4 +1,4 @@
-# Working with Query
+# Working with Query operation
 
 [[Overview]](#overview)  [[Operation details]](#operation-details)  [[Sample configuration]](#sample-configuration)
 

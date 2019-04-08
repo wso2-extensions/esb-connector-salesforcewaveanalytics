@@ -1,4 +1,4 @@
-# Working with Template
+# Working with Template operation
 
 [[Overview]](#overview)  [[Operation details]](#operation-details)  [[Sample configuration]](#sample-configuration)
 

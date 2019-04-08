@@ -1,4 +1,4 @@
-# Working with Wave
+# Working with Wave operation
 
 [[Overview]](#overview)  [[Operation details]](#operation-details)  [[Sample configuration]](#sample-configuration)
 

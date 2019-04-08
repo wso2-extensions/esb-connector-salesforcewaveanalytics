@@ -72,7 +72,7 @@
                 description                          -   Short description of the asset.
                 name                                 -   The name of the asset
                 mobileOnly                           -   For mobile dashboards only.
-                scope                                -   Type of scope to be applied to a collection resource representation.
+                scope                                -   The type of scope to be applied to a collection of resources.
                 pageSize                             -   Number of items to be returned in a single page. Minimum is 1, maximum is 200, and default is 25.
                 sort                                 -   Property names that can be sorted.
                 type                                 -   The description of the newly created/updated record.

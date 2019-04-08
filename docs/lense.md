@@ -1,4 +1,4 @@
-# Working with Lense
+# Working with Lense operation
 
 [[Overview]](#overview)  [[Operation details]](#operation-details)  [[Sample configuration]](#sample-configuration)
 
