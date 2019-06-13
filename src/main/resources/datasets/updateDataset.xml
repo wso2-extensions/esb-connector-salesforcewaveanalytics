@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Copyright (c) 2019, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+
+   WSO2 Inc. licenses this file to you under the Apache License,
+   Version 2.0 (the "License"); you may not use this file except
+   in compliance with the License.
+   You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied. See the License for the
+   specific language governing permissions and limitations
+   under the License.
+-->
+<template name="updateDataset" xmlns="http://ws.apache.org/ns/synapse">
+    <!-- required parameters -->
+    <parameter name="datasetId" description="The Id of the Dataset"/>
+    <!-- Optional parameters -->
+    <parameter name="currentVersionId" description="The current version Id of the dataset "/>
+    <parameter name="description" description="The description of the dataset"/>
+    <parameter name="folderId" description="The 18-character ID of the folder that contains the dataset"/>
+    <parameter name="label" description=" The label of the dataset"/>
+    <sequence>
+        <property name="uri.var.datasetId" expression="$func:datasetId"/>
+        <property name="currentVersionId" expression="$func:currentVersionId"/>
+        <property name="description" expression="$func:description"/>
+        <property name="folderId" expression="$func:folderId"/>
+        <property name="label" expression="$func:label"/>
+        <script language="js">
+            <![CDATA[
+            var currentVersionId = mc.getProperty('currentVersionId');
+            var description = mc.getProperty('description');
+            var folderId = mc.getProperty('folderId');
+            var label = mc.getProperty('label');
+            var payload = {};
+            var nestFolder = {};
+            if (folderId != null && folderId !="") {
+                nestFolder.id = folderId;
+                payload.folder = nestFolder;
+            }
+            if (currentVersionId != null && currentVersionId != "") {
+               payload.currentVersionId = currentVersionId;
+            }
+            if (description != null && description != "") {
+               payload.description = description;
+            }
+            if (label != null && label != "") {
+               payload.label = label;
+            }
+            mc.setPayloadJSON(payload);
+         ]]>
+        </script>
+        <filter source="$ctx:salesforceBlocking" regex="true">
+            <then>
+                <call blocking="true">
+                    <endpoint>
+                        <http method="patch"
+                              uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/datasets/{uri.var.datasetId}">
+                            <timeout>
+                                <duration>{$ctx:timeout}</duration>
+                                <responseAction>fault</responseAction>
+                            </timeout>
+                            <suspendOnFailure>
+                                <errorCodes>-1</errorCodes>
+                                <progressionFactor>1.0</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <errorCodes>-1</errorCodes>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+            </then>
+            <else>
+                <call>
+                    <endpoint>
+                        <http method="patch"
+                              uri-template="{uri.var.apiUrl}/services/data/{uri.var.apiVersion}/wave/datasets/{uri.var.datasetId}">
+                            <timeout>
+                                <duration>{$ctx:timeout}</duration>
+                                <responseAction>fault</responseAction>
+                            </timeout>
+                            <suspendOnFailure>
+                                <errorCodes>-1</errorCodes>
+                                <progressionFactor>1.0</progressionFactor>
+                            </suspendOnFailure>
+                            <markForSuspension>
+                                <errorCodes>-1</errorCodes>
+                            </markForSuspension>
+                        </http>
+                    </endpoint>
+                </call>
+            </else>
+        </filter>
+    </sequence>
+</template>
