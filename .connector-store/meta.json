@@ -4,7 +4,7 @@
     "category": "Productivity Tools",
     "documentationUrl": "https://github.com/wso2-extensions/esb-connector-salesforcewaveanalytics/blob/1.0.0/README.md",
     "description": "The Salesforce Wave Analytics Connector allows you to work with records in Salesforce. You can use the Salesforce connector to create, query, retrieve and update records in your organization's Salesforce data. The connector uses the Analytics REST API to interact with Salesforce.",
-    "status": "Active",
+    "status": "Inactive",
     "labels": [
         "salesforce"
     ],
